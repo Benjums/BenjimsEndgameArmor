@@ -20,7 +20,7 @@ namespace BenjimsEndgameArmor
     {
         public const string PluginGUID = "com.jotunn.BenjimsEndgameArmor";
         public const string PluginName = "Benjims Endgame Armor";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "0.0.2";
 
         private void Awake()
         {
@@ -50,8 +50,8 @@ namespace BenjimsEndgameArmor
                 CustomItem helmheavymetal = new CustomItem("HelmetHeavymetal", "HelmetPadded", new ItemConfig
                 {
                     CraftingStation = "piece_thorsforge",
-                    Description = "If you can stand wearing this disgusting thing, no poison could hurt you.",
-                    Name = "Heavymetal Helm",
+                    Description = "Disgusting, but effective.",
+                    Name = "Mithril Helm",
                     RepairStation = "piece_thorsforge",
                     Requirements = new[]
                     {
@@ -79,8 +79,9 @@ namespace BenjimsEndgameArmor
                     }
                 });
                 ItemManager.Instance.AddItem(helmheavymetal);
-                helmheavymetal.ItemDrop.m_itemData.m_shared.m_armor = 36;
+                helmheavymetal.ItemDrop.m_itemData.m_shared.m_armor = 32;
                 helmheavymetal.ItemDrop.m_itemData.m_shared.m_armorPerLevel = 2;
+                helmheavymetal.ItemDrop.m_itemData.m_shared.m_weight = 1;
 
                 // add poison resist to the helm
                 // resists on items are modeled as a list of damage type : resistance pairs of enum classes
@@ -99,11 +100,11 @@ namespace BenjimsEndgameArmor
                  Heavymetal Chest
                  *******************/
 
-                CustomItem armorheavymetalbreastplate = new CustomItem("ArmorHeavymetalBreastplate", "ArmorPaddedCuirass", new ItemConfig
+                CustomItem armorheavymetalshirt = new CustomItem("ArmorHeavymetalShirt", "ArmorPaddedCuirass", new ItemConfig
                 {
                     CraftingStation = "piece_thorsforge",
-                    Description = "Rugged plate armor stolen from the Mistlands.",
-                    Name = "Heavymetal Breastplate",
+                    Description = "The elves' alloy seems impossibly light.",
+                    Name = "Mithril Shirt",
                     RepairStation = "piece_thorsforge",
                     Requirements = new[]
                     {
@@ -123,11 +124,12 @@ namespace BenjimsEndgameArmor
                         }
                     }
                 });
-                ItemManager.Instance.AddItem(armorheavymetalbreastplate);
-                armorheavymetalbreastplate.ItemDrop.m_itemData.m_shared.m_armor = 36;
-                armorheavymetalbreastplate.ItemDrop.m_itemData.m_shared.m_armorPerLevel = 2;
+                ItemManager.Instance.AddItem(armorheavymetalshirt);
+                armorheavymetalshirt.ItemDrop.m_itemData.m_shared.m_armor = 32;
+                armorheavymetalshirt.ItemDrop.m_itemData.m_shared.m_armorPerLevel = 2;
+                armorheavymetalshirt.ItemDrop.m_itemData.m_shared.m_weight = 1;
                 // remove the speed reduction
-                armorheavymetalbreastplate.ItemDrop.m_itemData.m_shared.m_movementModifier = 0;
+                armorheavymetalshirt.ItemDrop.m_itemData.m_shared.m_movementModifier = 0;
 
                 /*******************
                 Heavymetal Legs
@@ -136,8 +138,8 @@ namespace BenjimsEndgameArmor
                 CustomItem armorheavymetalboots = new CustomItem("ArmorHeavymetalboots", "ArmorPaddedGreaves", new ItemConfig
                 {
                     CraftingStation = "piece_thorsforge",
-                    Description = "These are way lighter than they look!",
-                    Name = "Heavymetal Boots",
+                    Description = "The elves' speed must be magically enchanced.  You won't be as fast, but these will help.",
+                    Name = "Mithril Boots",
                     RepairStation = "piece_thorsforge",
                     Requirements = new[]
                     {
@@ -158,10 +160,11 @@ namespace BenjimsEndgameArmor
                     }
                 });
                 ItemManager.Instance.AddItem(armorheavymetalboots);
-                armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_armor = 36;
+                armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_armor = 32;
                 armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_armorPerLevel = 2;
+                armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_weight = 1;
                 // add a little bit of speed!
-                armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_movementModifier = 0.1f;
+                armorheavymetalboots.ItemDrop.m_itemData.m_shared.m_movementModifier = 0.15f;
             }
             catch (Exception ex)
             {
